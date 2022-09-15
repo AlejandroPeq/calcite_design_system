@@ -2,6 +2,6 @@
 
 Developers Track
 
-# calcite_system_design
+# calcite_design_system
 
 Sample using Calcite system design with ArcGIS JavaScript API
