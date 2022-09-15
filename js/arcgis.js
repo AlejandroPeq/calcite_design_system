@@ -10,7 +10,7 @@ require([
 
     const webmapId = '5c895f06a81e46dd8a459b61585883d8'
 
-    const map = new WebMap({
+    const webmap = new WebMap({
         portalItem: {
             id: webmapId
         }
@@ -18,15 +18,15 @@ require([
 
 
     const view = new MapView({
-        map,
+        map: webmap,
         container: "viewDiv",
         padding: {
-          left: 49
+            left: 49
         }
-      });
+    });
 
 
-    view.when(() => {
+    webmap.when(() => {
 
 
         document.querySelector("calcite-shell").hidden = false;
