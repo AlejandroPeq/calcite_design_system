@@ -16,6 +16,16 @@ require([
         }
     });
 
+
+    const view = new MapView({
+        map,
+        container: "viewDiv",
+        padding: {
+          left: 49
+        }
+      });
+
+
     map.when(() => {
 
 
