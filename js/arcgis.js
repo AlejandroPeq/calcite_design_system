@@ -8,7 +8,7 @@ require([
     "esri/widgets/Print"
 ], function (WebMap, MapView, Bookmarks, BasemapGallery, LayerList, Legend, Print) {
 
-    const webmapId = 'cc3bd744b9a44feaa493dd867a1d48dd'
+    const webmapId = '5c895f06a81e46dd8a459b61585883d8'
 
     const map = new WebMap({
         portalItem: {
@@ -26,7 +26,7 @@ require([
       });
 
 
-    map.when(() => {
+    view.when(() => {
 
 
         document.querySelector("calcite-shell").hidden = false;
