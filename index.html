@@ -8,51 +8,79 @@
     <title>Calcite System Design</title>
     <link rel="icon" type="image/x-icon" href="assets/images/developers.png">
     <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.0-beta.93/calcite.css" />
-    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/dark/main.css" />
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body>
+<body class="calcite-theme-dark">
     <calcite-loader active></calcite-loader>
 
-    <calcite-shell content-behind hidden>
 
-        <calcite-shell-panel slot="primary-panel" detached>
+    <calcite-shell hidden>
 
-            <calcite-action-bar slot="action-bar">
-                <calcite-action data-action-id="layers" icon="layers" text="Layers"></calcite-action>
-                <calcite-action data-action-id="basemaps" icon="basemap" text="Basemaps"></calcite-action>
-                <calcite-action data-action-id="legend" icon="legend" text="Legend"></calcite-action>
-                <calcite-action data-action-id="bookmarks" icon="bookmark" text="Bookmarks"></calcite-action>
-                <calcite-action data-action-id="print" icon="print" text="Print"></calcite-action>
-                <calcite-action data-action-id="information" icon="information" text="Information"></calcite-action>
-            </calcite-action-bar>
+        <div id="app-header" slot="header">
+            
+            <h2 id="title-header">Calcite Design System</h2>
 
-            <!-- Map-specific panels (each one provides a div for ArcGIS JavaScript API widgets) -->
-            <calcite-panel heading="Layers" height-scale="l" data-panel-id="layers" hidden>
-                <div id="layers-container"></div>
-            </calcite-panel>
-            <calcite-panel heading="Basemaps" height-scale="l" data-panel-id="basemaps" hidden>
-                <div id="basemaps-container"></div>
-            </calcite-panel>
-            <calcite-panel heading="Legend" height-scale="l" data-panel-id="legend" hidden>
-                <div id="legend-container"></div>
-            </calcite-panel>
-            <calcite-panel heading="Bookmarks" height-scale="l" data-panel-id="bookmarks" hidden>
-                <div id="bookmarks-container"></div>
-            </calcite-panel>
-            <calcite-panel heading="Print" height-scale="l" data-panel-id="print" hidden>
-                <div id="print-container"></div>
-            </calcite-panel>
+        </div>
 
+        <calcite-shell-panel slot="primary-panel" position="start" detached>
+            <calcite-panel heading="Layer settings">
+                <calcite-block collapsible heading="Primary Content" summary="This is the primary content.">
+                    <calcite-block-content>
+                        <calcite-action text="Puppies" text-enabled indicator icon="plus">
+                        </calcite-action>
+                        <calcite-action text="Kittens" text-enabled icon="save"></calcite-action>
+                        <calcite-action text="Birds?" text-enabled icon="banana"></calcite-action>
+                    </calcite-block-content>
+                </calcite-block>
+                <calcite-block collapsible heading="Slice" summary="Herramienta de cortes interactiva">
+                    <calcite-block-content id="slice-container">
+                        
+                    </calcite-block-content>
+                </calcite-block>
+
+                <calcite-block collapsible heading="Tiempo" summary="Simulador de tiempo">
+                    <calcite-block-content >
+                        
+                    </calcite-block-content>
+                </calcite-block>
+
+            </calcite-panel>
+        </calcite-shell-panel>
+
+        <calcite-shell-panel slot="contextual-panel" position="end" detached height-scale="l">
+
+            <calcite-flow>
+                <calcite-panel heading="Layer settings">
+                    <calcite-block collapsible open heading="Contextual Content" summary="Select goodness">
+                        <calcite-value-list multiple filter-enabled>
+                            <calcite-value-list-item label="2018 Population Density (Esri)" description="{POPDENS_CY}"
+                                value="POPDENS_CY">
+                                <calcite-action slot="actions-end" icon="camera-flash-on">
+                                </calcite-action>
+                            </calcite-value-list-item>
+                            <calcite-value-list-item label="2018 Population Density [Updated]"
+                                description="{POPDENS_CY}" value="POPDENS_CY2">
+                                <calcite-action slot="actions-end" icon="banana"></calcite-action>
+                            </calcite-value-list-item>
+                            <calcite-value-list-item label="2018 Total Households (Esri)" description="{TOTHH_CY}"
+                                value="TOTHH_CY">
+                                <calcite-action slot="actions-end" icon="person2"></calcite-action>
+                            </calcite-value-list-item>
+                        </calcite-value-list>
+                    </calcite-block>
+                </calcite-panel>
+            </calcite-flow>
         </calcite-shell-panel>
 
         <div id="viewDiv"></div>
 
     </calcite-shell>
 
-    
+
+
     <script type="module" src="https://js.arcgis.com/calcite-components/1.0.0-beta.93/calcite.esm.js"></script>
     <script src="https://js.arcgis.com/4.23/"></script>
 

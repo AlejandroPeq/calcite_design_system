@@ -26,3 +26,14 @@ calcite-loader {
 calcite-rating {
     margin-top: 0.25rem;
 }
+
+#app-header{
+
+    background-color: var(--calcite-ui-text-1);
+}
+
+#title-header{
+    margin-left: 20px;
+    color: var(--calcite-ui-text-inverse);
+
+}

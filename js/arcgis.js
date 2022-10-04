@@ -1,32 +1,40 @@
 require([
-    "esri/WebMap",
-    "esri/views/MapView",
+    "esri/WebScene",
+    "esri/views/SceneView",
     "esri/widgets/Bookmarks",
     "esri/widgets/BasemapGallery",
     "esri/widgets/LayerList",
     "esri/widgets/Legend",
-    "esri/widgets/Print"
-], function (WebMap, MapView, Bookmarks, BasemapGallery, LayerList, Legend, Print) {
+    "esri/widgets/Slice",
+    "esri/widgets/Weather"
+], function (WebScene, SceneView, Bookmarks, BasemapGallery, LayerList, Legend, Slice, Weather) {
 
-    const webmapId = '5c895f06a81e46dd8a459b61585883d8'
+    const websceneId = 'cac6143eca14471ebc1b90ea29b827c6'
 
-    const webmap = new WebMap({
+    const webscene = new WebScene({
         portalItem: {
-            id: webmapId
+            id: websceneId
         }
     });
 
 
-    const view = new MapView({
-        map: webmap,
+    const view = new SceneView({
+        map: webscene,
         container: "viewDiv",
-        padding: {
-            left: 49
-        }
     });
 
+    const slice = new Slice({
+        view: view,
+        container: 'slice-container'
+    });
 
-    webmap.when(() => {
+    const weather = new Weather({
+        view: view,
+    });
+
+    view.ui.add(weather, "top-right");
+
+    webscene.when(() => {
 
 
         document.querySelector("calcite-shell").hidden = false;
