@@ -33,7 +33,34 @@ calcite-rating {
 }
 
 #title-header{
-    margin-left: 20px;
+    margin-left: 60px;
     color: var(--calcite-ui-text-inverse);
+    float: left;
+}
 
+#weather-container.esri-widget{
+
+    background-color: unset!important;
+
+}
+
+#logo-header{
+    float: left;
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+}
+
+.esri-weather__content{
+
+    width: 100%;
+}
+
+#collapse-button{
+
+    margin-top: 5px;
+    float: right;
+    margin-right: 10px;
 }

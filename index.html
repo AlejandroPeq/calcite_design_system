@@ -8,7 +8,7 @@
     <title>Calcite System Design</title>
     <link rel="icon" type="image/x-icon" href="assets/images/developers.png">
     <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.0.0-beta.93/calcite.css" />
-    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/dark/main.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/dark/main.css" />
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -20,9 +20,13 @@
     <calcite-shell hidden>
 
         <div id="app-header" slot="header">
-            
+            <img id="logo-header"
+                src="https://www.esri.com/content/dam/esrisites/en-us/common/icons/product-logos/Developers.png" alt="">
             <h2 id="title-header">Calcite Design System</h2>
-
+            <calcite-action-pad id="collapse-button" layout="horizontal" expand-disabled="" calcite-hydrated="">
+                <calcite-action id="themeToggle" text="Light" icon="hamburger" appearance="solid" scale="m"
+                    calcite-hydrated=""></calcite-action>
+            </calcite-action-pad>
         </div>
 
         <calcite-shell-panel slot="primary-panel" position="start" detached>
@@ -37,20 +41,28 @@
                 </calcite-block>
                 <calcite-block collapsible heading="Slice" summary="Herramienta de cortes interactiva">
                     <calcite-block-content id="slice-container">
-                        
+
                     </calcite-block-content>
                 </calcite-block>
 
                 <calcite-block collapsible heading="Tiempo" summary="Simulador de tiempo">
-                    <calcite-block-content >
-                        
+                    <calcite-block-content id="weather-container">
+
                     </calcite-block-content>
                 </calcite-block>
+
+                <calcite-block collapsible heading="Medidas" summary="Herramienta de medidas interactiva">
+                    <calcite-block-content id="area-measurement-container">
+
+                    </calcite-block-content>
+                </calcite-block>
+
+               
 
             </calcite-panel>
         </calcite-shell-panel>
 
-        <calcite-shell-panel slot="contextual-panel" position="end" detached height-scale="l">
+        <calcite-shell-panel id="left-panel" slot="contextual-panel" position="end" detached height-scale="l" collapsed="false">
 
             <calcite-flow>
                 <calcite-panel heading="Layer settings">
@@ -82,7 +94,7 @@
 
 
     <script type="module" src="https://js.arcgis.com/calcite-components/1.0.0-beta.93/calcite.esm.js"></script>
-    <script src="https://js.arcgis.com/4.23/"></script>
+    <script src="https://js.arcgis.com/4.24/"></script>
 
     <script src="js/arcgis.js"></script>
 </body>
