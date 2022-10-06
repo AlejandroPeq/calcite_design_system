@@ -30,7 +30,7 @@
         </div>
 
         <calcite-shell-panel slot="primary-panel" position="start" detached>
-            <calcite-panel heading="Layer settings">
+            <calcite-panel heading="Herramientas de Análisis">
                 <calcite-block collapsible heading="Primary Content" summary="This is the primary content.">
                     <calcite-block-content>
                         <calcite-action text="Puppies" text-enabled indicator icon="plus">
@@ -57,15 +57,46 @@
                     </calcite-block-content>
                 </calcite-block>
 
-               
+                <calcite-block collapsible heading="Sombras Proyectadas" summary="Herramienta de análisis espacial">
+                    <calcite-block-content id="shadow-container">
+
+                    </calcite-block-content>
+                </calcite-block>
+
+                <calcite-block collapsible heading="Luces y Sombras" summary="Herramienta de análisis espacial">
+                    <calcite-block-content id="daylight-container">
+
+                    </calcite-block-content>
+                </calcite-block>
+
+                <calcite-block collapsible heading="Perfil del Terreno" summary="Herramienta de análisis espacial">
+                    <div id="profile-container"></div>
+
+                </calcite-block>
+
+                <calcite-block collapsible heading="Línea de Visión" summary="Herramienta de análisis espacial">
+                    <div id="lineOfSight-container"></div>
+
+                </calcite-block>
+
+
+
+
 
             </calcite-panel>
         </calcite-shell-panel>
 
-        <calcite-shell-panel id="left-panel" slot="contextual-panel" position="end" detached height-scale="l" collapsed="false">
+        <calcite-shell-panel id="left-panel" slot="contextual-panel" position="end" detached height-scale="l"
+            collapsed="false">
 
             <calcite-flow>
-                <calcite-panel heading="Layer settings">
+                <calcite-panel heading="Propiedades de Capas">
+
+                    <calcite-block collapsible heading="Listado de Capas" summary="Herramienta de análisis espacial">
+                        <div id="layerList-container"></div>
+
+                    </calcite-block>
+
                     <calcite-block collapsible open heading="Contextual Content" summary="Select goodness">
                         <calcite-value-list multiple filter-enabled>
                             <calcite-value-list-item label="2018 Population Density (Esri)" description="{POPDENS_CY}"
@@ -83,6 +114,17 @@
                             </calcite-value-list-item>
                         </calcite-value-list>
                     </calcite-block>
+
+                    <calcite-block collapsible heading="Filtros Dinámicos" summary="slider dinámico">
+                        <div id="slider-container"></div>
+
+                    </calcite-block>
+
+
+
+
+
+
                 </calcite-panel>
             </calcite-flow>
         </calcite-shell-panel>
